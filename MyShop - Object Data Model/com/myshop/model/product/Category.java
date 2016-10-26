@@ -1,5 +1,6 @@
 package com.myshop.model.product;
 
+
 public class Category {
 	
 	private String name;
