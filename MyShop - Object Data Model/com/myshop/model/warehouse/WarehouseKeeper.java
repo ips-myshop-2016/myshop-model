@@ -1,8 +1,9 @@
 package com.myshop.model.warehouse;
 
 /**
- * Warehouse keeper ODM
+ * Warehouse keeper ODM.
  * 
+ * @version 2610161321
  * @author Guillermo Facundo Colunga
  */
 public class WarehouseKeeper {

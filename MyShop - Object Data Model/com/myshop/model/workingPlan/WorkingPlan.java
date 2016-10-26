@@ -1,5 +1,11 @@
 package com.myshop.model.workingPlan;
 
+/**
+ * Working Plan ODM.
+ * 
+ * @version 2610161321
+ * @author Guillermo Facundo Colunga
+ */
 public class WorkingPlan {
 
 	private int wpID, wkID;
