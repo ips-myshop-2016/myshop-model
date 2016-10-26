@@ -1,30 +1,15 @@
 package com.myshop.model.product;
 
-public class Status {
+public enum Status {
 	
-	private int statusID;
-	private String name;
+	PENDIENTE_PAGO ("pendiente_pago"), PAGADO ("pagado"), PREPARANDO ("preparando"),
+	PENDIENTE_EMPAQUETADO ("pendiente_empaquetado"), EMPAQUETANDO ("empaquetando"), FINALIZADO ("finalizado");
 	
-	public Status(int statusID, String name) {
-		setStatusID(statusID);
-		setName(name);
-	}
-
-	public int getStatusID() {
-		return statusID;
-	}
-
-	public void setStatusID(int statusID) {
-		this.statusID = statusID;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
+	private String estado;
 	
+	Status(String estado) {
+		this.estado = estado;
+	}
+	
+	public String toString() { return this.estado; }
 }

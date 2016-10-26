@@ -1,6 +1,6 @@
 package com.myshop.model.product;
 
-public class OrderItem implements Comparable<OrderItem>{
+public class OrderItem {
 
 	private int quantity;
 	private Product product;
@@ -8,30 +8,7 @@ public class OrderItem implements Comparable<OrderItem>{
 	private Incidence incidence;
 	private MailBox mailbox;
 	
-	/**
-	 * Creates a new entry for a product,its id, its quantity and if its collected
-	 * 
-	 * @param id of the product to add.
-	 * @param quantity to be added of the product.
-	 * @param product to add.
-	 **/
 	
-	public OrderItem(int quantity, Product product, boolean collected) {
-		setQuantity(quantity);
-		this.product = product;
-		setCollected(collected);
-	}
-	/**
-	 * Creates a new entry for a product,its id and its quantity
-	 * 
-	 * @param quantity to be added of the product.
-	 * @param product to add.
-	 **/
-	public OrderItem (int quantity, Product product) {
-		setQuantity(quantity);
-		this.product = product;
-	}
-
 	/**
 	 * 
 	 * @return products quantity
@@ -58,6 +35,14 @@ public class OrderItem implements Comparable<OrderItem>{
 
 	/**
 	 * 
+	 * @param product
+	 */
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	/**
+	 * 
 	 * @return if its collected
 	 */
 	public boolean isCollected() {
@@ -71,9 +56,38 @@ public class OrderItem implements Comparable<OrderItem>{
 	public void setCollected(boolean collected) {
 	
 	}
-	@Override
-	public int compareTo(OrderItem oi) {
-		return this.product.getProductLocation().compareTo(oi.getProduct().getProductLocation());
+
+	/**
+	 * 
+	 * @return the incidence
+	 */
+	public Incidence getIncidence() {
+		return incidence;
 	}
+
+	/**
+	 * 
+	 * @param incidence
+	 */
+	public void setIncidence(Incidence incidence) {
+		this.incidence = incidence;
+	}
+
+	/**
+	 * 
+	 * @return mailbox
+	 */
+	public MailBox getMailbox() {
+		return mailbox;
+	}
+
+	/**
+	 * 
+	 * @param mailbox
+	 */
+	public void setMailbox(MailBox mailbox) {
+		this.mailbox = mailbox;
+	}
+
 	
 }
