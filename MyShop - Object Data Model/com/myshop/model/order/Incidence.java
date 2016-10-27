@@ -6,6 +6,10 @@ public class Incidence {
 	private boolean solve;
 
 	
+	public Incidence(){}
+	public Incidence(int incidenceID){
+		this.incidenceID=incidenceID;
+	}
 	/**
 	 * 
 	 * @return incidences ID

@@ -1,4 +1,4 @@
-package com.myshop.model.product;
+package com.myshop.model.order;
 
 public enum Status {
 	
@@ -6,6 +6,7 @@ public enum Status {
 	PENDIENTE_EMPAQUETADO ("pendiente_empaquetado"), EMPAQUETANDO ("empaquetando"), FINALIZADO ("finalizado");
 	
 	private String estado;
+	
 	
 	Status(String estado) {
 		this.estado = estado;

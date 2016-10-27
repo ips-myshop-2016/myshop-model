@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.myshop.model.customer.Customer;
-import com.myshop.model.product.Status;
 
 public class Order{
 
@@ -51,16 +50,33 @@ public class Order{
 	 * 
 	 * @return orders status
 	 */
-	public Status getStatus() {
-		return status;
+	public String getStatus() {
+		return status.toString();
 	}
 
 	/**
 	 * 
 	 * @param status
 	 */
-	public void setStatus(Status status) {
-		this.status = status;
+	public void setStatus(String estado) {
+		if(estado.equals(Status.EMPAQUETANDO)){
+			status = Status.EMPAQUETANDO;
+		}
+		if(estado.equals(Status.FINALIZADO)){
+			status = Status.FINALIZADO;
+		}
+		if(estado.equals(Status.PAGADO)){
+			status = Status.PAGADO;
+		}
+		if(estado.equals(Status.PENDIENTE_EMPAQUETADO)){
+			status = Status.PENDIENTE_EMPAQUETADO;
+		}
+		if(estado.equals(Status.PENDIENTE_PAGO)){
+			status = Status.PENDIENTE_PAGO;
+		}
+		if(estado.equals(Status.PREPARANDO)){
+			status = Status.PREPARANDO;
+		}
 	}
 	
 	/**
@@ -95,5 +111,24 @@ public class Order{
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-
+	
+	/**
+	 * 
+	 * @return getCustomerID
+	 */
+	public int getCustomerID(){
+		return customer.getCustomerID();
+	}
+	
+	/**
+	 * 
+	 * @param customerID
+	 */
+	public void setCustomerID(int customerID){
+		if(customer==null) {
+			customer = new Customer();
+		}
+		customer.setCustomerID(customerID);
+		
+	}
 }
