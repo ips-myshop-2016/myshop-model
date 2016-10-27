@@ -1,177 +1,238 @@
 package com.myshop.model.product;
 
-public class Product {
+import com.myshop.model.contracts.DatabaseEntity;
+
+public class Product implements DatabaseEntity {
 
 	private int productID, stock;
-	private String name,description;
+	private String name, description;
 	private double weight, price;
 	private Category category, subcategory;
 	private ProductLocation productLocation;
-	
-	public Product(){}
-	public Product(int ID,int stock, String nombre, String descripcion, double precio, double peso,
-			Category categoria, Category subcategoria, ProductLocation location){
-		this.productID=ID;
-		this.stock=stock;
-		this.name=nombre;
-		this.description=descripcion;
-		this.weight=peso;
-		this.price=precio;
-		this.category=categoria;
-		this.subcategory=subcategoria;
-		this.productLocation=location;
-		
-		
+
+	public Product() {
 	}
+
+	public Product(int ID, int stock, String nombre, String descripcion, double precio, double peso, Category categoria,
+			Category subcategoria, ProductLocation location) {
+		this.productID = ID;
+		this.stock = stock;
+		this.name = nombre;
+		this.description = descripcion;
+		this.weight = peso;
+		this.price = precio;
+		this.category = categoria;
+		this.subcategory = subcategoria;
+		this.productLocation = location;
+
+	}
+
 	/**
 	 * @return the productID
 	 */
-	public int getProductID() { return productID; }
-	
+	public int getID() {
+		return productID;
+	}
+
 	/**
-	 * @param productID the productID to set
+	 * @param productID
+	 *            the productID to set
 	 */
-	public void setProductID(int productID) { this.productID = productID; }
-	
+	public void setID(int productID) {
+		this.productID = productID;
+	}
+
 	/**
 	 * @return the stock
 	 */
-	public int getStock() { return stock; }
-	
+	public int getStock() {
+		return stock;
+	}
+
 	/**
-	 * @param stock the stock to set
+	 * @param stock
+	 *            the stock to set
 	 */
-	public void setStock(int stock) { this.stock = stock; }
-	
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
 	/**
 	 * @return the name
 	 */
-	public String getName() { return name; }
-	
+	public String getName() {
+		return name;
+	}
+
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
-	public void setName(String name) { this.name = name; }
-	
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	/**
 	 * @return the description
 	 */
-	public String getDescription() { return description; }
-	
+	public String getDescription() {
+		return description;
+	}
+
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
-	public void setDescription(String description) { this.description = description; }
-	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	/**
 	 * @return the weight
 	 */
-	public double getWeight() { return weight; }
-	
+	public double getWeight() {
+		return weight;
+	}
+
 	/**
-	 * @param weight the weight to set
+	 * @param weight
+	 *            the weight to set
 	 */
-	public void setWeight(double weight) { this.weight = weight; }
-	
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
 	/**
 	 * @return the price
 	 */
-	public double getPrice() { return price; }
-	
+	public double getPrice() {
+		return price;
+	}
+
 	/**
-	 * @param price the price to set
+	 * @param price
+	 *            the price to set
 	 */
-	public void setPrice(double price) { this.price = price; }
+	public void setPrice(double price) {
+		this.price = price;
+	}
 
 	/**
 	 * @return the category
 	 */
-	public String getCategory() { return category.getCategoryName(); }
+	public String getCategory() {
+		return category.getCategoryName();
+	}
 
 	/**
-	 * @param category the category to set
+	 * @param category
+	 *            the category to set
 	 */
-	public void setCategory(String category) { this.category = new Category(category); }
+	public void setCategory(String category) {
+		this.category = new Category(category);
+	}
 
 	/**
 	 * @return the subcategory
 	 */
-	public String getSubcategory() { return subcategory.getCategoryName(); }
+	public String getSubcategory() {
+		return subcategory.getCategoryName();
+	}
 
 	/**
-	 * @param subcategory the subcategory to set
+	 * @param subcategory
+	 *            the subcategory to set
 	 */
-	public void setSubcategory(String subcategory) { this.subcategory = new Category(subcategory); }
+	public void setSubcategory(String subcategory) {
+		this.subcategory = new Category(subcategory);
+	}
 
 	/**
 	 * @return the productLocation
 	 */
-	public ProductLocation getProductLocation() { return productLocation; }
+	public ProductLocation getProductLocation() {
+		return productLocation;
+	}
 
 	/**
-	 * @param productLocation the productLocation to set
+	 * @param productLocation
+	 *            the productLocation to set
 	 */
-	public void setProductLocation(ProductLocation productLocation) { this.productLocation = productLocation; }
-	
+	public void setProductLocation(ProductLocation productLocation) {
+		this.productLocation = productLocation;
+	}
+
 	/**
 	 * @return the corridor
 	 */
-	public int getCorridor() { return productLocation.getCorridor(); }
-	
+	public int getCorridor() {
+		return productLocation.getCorridor();
+	}
+
 	/**
-	 * @param corridor corridor the be set for this product.
+	 * @param corridor
+	 *            corridor the be set for this product.
 	 */
 	public void setCorridor(int corridor) {
-		if(productLocation==null) {
+		if (productLocation == null) {
 			productLocation = new ProductLocation();
 		}
 		productLocation.setCorridor(corridor);
 	}
-	
+
 	/**
 	 * @return the side
 	 */
-	public String getSide() { return productLocation.getSide().toString(); }
-	
+	public String getSide() {
+		return productLocation.getSide().toString();
+	}
+
 	/**
-	 * @param side the side to set
+	 * @param side
+	 *            the side to set
 	 */
 	public void setSide(String side) {
-		if(productLocation==null) {
+		if (productLocation == null) {
 			productLocation = new ProductLocation();
 		}
-		
-		if(side.equals(Side.LEFT.toString()))
+
+		if (side.equals(Side.LEFT.toString()))
 			productLocation.setSide(Side.LEFT);
 		else
 			productLocation.setSide(Side.RIGHT);
 	}
-	
+
 	/**
 	 * @return the position
 	 */
-	public int getPosition() { return productLocation.getPosition(); }
-	
+	public int getPosition() {
+		return productLocation.getPosition();
+	}
+
 	/**
-	 * @param pos position of the product.
+	 * @param pos
+	 *            position of the product.
 	 */
 	public void setPosition(int pos) {
-		if(productLocation==null) {
+		if (productLocation == null) {
 			productLocation = new ProductLocation();
 		}
 		productLocation.setPosition(pos);
 	}
-	
+
 	/**
 	 * @return the height
 	 */
-	public int getHeight() { return productLocation.getHeight(); }
-	
+	public int getHeight() {
+		return productLocation.getHeight();
+	}
+
 	/**
-	 * @param h height where this product is placed
+	 * @param h
+	 *            height where this product is placed
 	 */
 	public void setHeight(int h) {
-		if(productLocation==null) {
+		if (productLocation == null) {
 			productLocation = new ProductLocation();
 		}
 		productLocation.setHeight(h);

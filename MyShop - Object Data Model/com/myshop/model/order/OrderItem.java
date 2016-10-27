@@ -1,12 +1,12 @@
 package com.myshop.model.order;
 
+import com.myshop.model.contracts.DatabaseEntity;
 import com.myshop.model.product.Product;
 
-public class OrderItem {
+public class OrderItem implements DatabaseEntity {
 
 	private int orderItemID,quantity;
 	private Product product;
-	private boolean collected = false;
 	private Incidence incidence;
 	private MailBox mailbox;
 	
@@ -14,7 +14,8 @@ public class OrderItem {
 	 * 
 	 * @return orderItemID
 	 */
-	public int getOrderItemID() {
+	@Override
+	public int getID() {
 		return orderItemID;
 	}
 
@@ -22,7 +23,8 @@ public class OrderItem {
 	 * 
 	 * @param orderItemID
 	 */
-	public void setOrderItemID(int orderItemID) {
+	@Override
+	public void setID(int orderItemID) {
 		this.orderItemID = orderItemID;
 	}
 	
@@ -63,7 +65,7 @@ public class OrderItem {
 	 * @return productID
 	 */
 	public int getProductID(){
-		return product.getProductID();
+		return product.getID();
 	}
 	
 	/**
@@ -74,7 +76,7 @@ public class OrderItem {
 		if(product==null){
 			product = new Product();
 		}
-		product.setProductID(id);
+		product.setID(id);
 	}
 	
 	/**
@@ -285,21 +287,6 @@ public class OrderItem {
 		}
 		product.setSide(side);
 	}
-	/**
-	 * 
-	 * @return if its collected
-	 */
-	public boolean isCollected() {
-		return collected;
-	}
-
-	/**
-	 * 
-	 * @param collected
-	 */
-	public void setCollected(boolean collected) {
-	
-	}
 
 	/**
 	 * 
@@ -322,7 +309,7 @@ public class OrderItem {
 	 * @return IncidenceID
 	 */
 	public int getIncidenceID(){
-		return incidence.getIncidenceID();
+		return incidence.getID();
 	}
 	
 	/**
@@ -333,7 +320,7 @@ public class OrderItem {
 		if(incidence==null){
 			incidence = new Incidence();
 		}
-		incidence.setIncidenceID(incidenceID);
+		incidence.setID(incidenceID);
 	}
 	
 	/**
@@ -394,7 +381,7 @@ public class OrderItem {
 	 * @return MailBoxID
 	 */
 	public int getMailBoxID(){
-		return mailbox.getMailBoxID();
+		return mailbox.getID();
 	}
 	
 	/**
@@ -405,6 +392,6 @@ public class OrderItem {
 		if(mailbox==null) {
 			mailbox = new MailBox(mailBoxID);
 		}
-		mailbox.setMailBoxID(mailBoxID);
+		mailbox.setID(mailBoxID);
 	}
 }

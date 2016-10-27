@@ -3,9 +3,10 @@ package com.myshop.model.order;
 import java.util.Date;
 import java.util.List;
 
+import com.myshop.model.contracts.DatabaseEntity;
 import com.myshop.model.customer.Customer;
 
-public class Order{
+public class Order implements DatabaseEntity {
 
 	private int orderID;
 	private List<OrderItem> products;
@@ -18,7 +19,8 @@ public class Order{
 	 * 
 	 * @return orders ID
 	 */
-	public int getOrderID() {
+	@Override
+	public int getID() {
 		return orderID;
 	}
 
@@ -26,7 +28,8 @@ public class Order{
 	 * 
 	 * @param orderID
 	 */
-	public void setOrderID(int orderID) {
+	@Override
+	public void setID(int orderID) {
 		this.orderID = orderID;
 	}
 	
@@ -117,7 +120,7 @@ public class Order{
 	 * @return getCustomerID
 	 */
 	public int getCustomerID(){
-		return customer.getCustomerID();
+		return customer.getID();
 	}
 	
 	/**
@@ -128,7 +131,7 @@ public class Order{
 		if(customer==null) {
 			customer = new Customer();
 		}
-		customer.setCustomerID(customerID);
+		customer.setID(customerID);
 		
 	}
 }

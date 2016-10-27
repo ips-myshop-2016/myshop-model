@@ -1,6 +1,8 @@
 package com.myshop.model.order;
 
-public class MailBox {
+import com.myshop.model.contracts.DatabaseEntity;
+
+public class MailBox implements DatabaseEntity {
 	
 	private int mailBoxID;
 
@@ -12,7 +14,8 @@ public class MailBox {
 	 * 
 	 * @return MailBoxID
 	 */
-	public int getMailBoxID() {
+	@Override
+	public int getID() {
 		return mailBoxID;
 	}
 	
@@ -20,7 +23,8 @@ public class MailBox {
 	 * 
 	 * @param mailBoxID
 	 */
-	public void setMailBoxID(int mailBoxID) {
+	@Override
+	public void setID(int mailBoxID) {
 		this.mailBoxID = mailBoxID;
 	}
 	

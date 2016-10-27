@@ -1,11 +1,11 @@
 package com.myshop.model.workingPlan;
 
-import com.myshop.model.product.OrderItem;
+import com.myshop.model.order.OrderItem;
 
 public class WorkingPlanItem {
 	
 	private OrderItem orderItem;
-	private int wpID;
+	private boolean collected;
 	
 	/**
 	 * @return the orderItem
@@ -18,12 +18,12 @@ public class WorkingPlanItem {
 	public void setOrderItem(OrderItem orderItem) { this.orderItem = orderItem; }
 	
 	/**
-	 * @return the wpID
+	 * @return if the item has been collected.
 	 */
-	public int getWpID() { return wpID; }
+	public boolean getCollected() { return this.collected; }
 	
 	/**
-	 * @param wpID the wpID to set
+	 * @param collected
 	 */
-	public void setWpID(int wpID) { this.wpID = wpID; }
+	public void setCollected(boolean collected) { this.collected = collected; }
 }

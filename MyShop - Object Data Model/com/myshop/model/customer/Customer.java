@@ -1,6 +1,8 @@
 package com.myshop.model.customer;
 
-public class Customer {
+import com.myshop.model.contracts.DatabaseEntity;
+
+public class Customer implements DatabaseEntity {
 	
 	private int customerID;
 
@@ -9,7 +11,8 @@ public class Customer {
 	 * 
 	 * @return customerID
 	 */
-	public int getCustomerID() {
+	@Override
+	public int getID() {
 		return customerID;
 	}
 
@@ -17,7 +20,8 @@ public class Customer {
 	 * 
 	 * @param customerID
 	 */
-	public void setCustomerID(int customerID) {
+	@Override
+	public void setID(int customerID) {
 		this.customerID = customerID;
 	}
 	
