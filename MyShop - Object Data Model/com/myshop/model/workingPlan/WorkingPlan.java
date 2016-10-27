@@ -1,34 +1,51 @@
 package com.myshop.model.workingPlan;
 
+import java.util.List;
+
+import com.myshop.model.contracts.DatabaseEntity;
+import com.myshop.model.people.WarehouseKeeper;
+
 /**
  * Working Plan ODM.
  * 
  * @version 2610161321
  * @author Guillermo Facundo Colunga
  */
-public class WorkingPlan {
+public class WorkingPlan implements DatabaseEntity {
 
-	private int wpID, wkID;
+	private int ID;
+	private WarehouseKeeper wk = new WarehouseKeeper();
+	private List<WorkingPlanItem> items;
 
 	/**
 	 * @return the wpID
 	 */
-	public int getWpID() { return wpID; }
+	@Override
+	public int getID() { return ID; }
 
 	/**
 	 * @param wpID the wpID to set
 	 */
-	public void setWpID(int wpID) { this.wpID = wpID; }
+	@Override
+	public void setID(int wpID) { this.ID = wpID; }
 
 	/**
-	 * @return the wkID
+	 * @return the warehouse keeper.
 	 */
-	public int getWkID() { return wkID; }
-
+	public WarehouseKeeper getWarehouseKeeper() { return this.wk; }
+	
 	/**
-	 * @param wkID the wkID to set
+	 * @param warehouseKeeper is the warehouse keeper assigned to this workingPlan.
 	 */
-	public void setWkID(int wkID) { this.wkID = wkID; }
+	public void setWarehouseKeeper(WarehouseKeeper warehouseKeeper) { this.wk= warehouseKeeper; }
 	
+	/**
+	 * @return the list of items.
+	 */
+	public List<WorkingPlanItem> getItems() { return this.items; }
 	
+	/**
+	 * @param items the list of items.
+	 */
+	public void setItems(List<WorkingPlanItem> items) { this.items = items; }
 }

@@ -26,7 +26,4 @@ public class WorkingPlanItem {
 	 * @param wpID the wpID to set
 	 */
 	public void setWpID(int wpID) { this.wpID = wpID; }
-	
-	
-
 }

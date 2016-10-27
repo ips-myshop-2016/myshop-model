@@ -1,4 +1,7 @@
-package com.myshop.model.warehouse;
+package com.myshop.model.people;
+
+import com.myshop.model.contracts.DatabaseEntity;
+import com.myshop.model.contracts.Person;
 
 /**
  * Warehouse keeper ODM.
@@ -6,39 +9,50 @@ package com.myshop.model.warehouse;
  * @version 2610161321
  * @author Guillermo Facundo Colunga
  */
-public class WarehouseKeeper {
+public class WarehouseKeeper implements DatabaseEntity, Person {
 	
-	private int warehouseKeeperID;
+	private int ID;
 	private String name, surname;
 	
 	/**
 	 * @return the warehouse keeper id.
 	 */
-	public int getWarehouseKeeperID() { return this.warehouseKeeperID; }
+	@Override
+	public int getID() { return this.ID; }
 	
 	/**
 	 * @param warehouseKeeperID the warehouse keeper id.
 	 */
-	public void setWarehouseKeeperID(int warehouseKeeperID) { this.warehouseKeeperID = warehouseKeeperID; }
+	@Override
+	public void setID(int warehouseKeeperID) { this.ID = warehouseKeeperID; }
 	
 	/**
 	 * @return the name of the warehouse keeper.
 	 */
+	@Override
 	public String getName() { return this.name; }
 	
 	/**
 	 * @param name the name of the warehouse keeper.
 	 */
+	@Override
 	public void setName(String name) { this.name = name; }
 	
 	/**
 	 * @return the surname of the warehouse keeper.
 	 */
+	@Override
 	public String getSurname() { return this.surname; }
 	
 	/**
 	 * @param surname the surname of the warehouse keeper.
 	 */
+	@Override
 	public void setSurname(String surname) { this.surname = surname; }
+	
+	@Override
+	public String toString() {
+		return getName() + " " + getSurname();
+	}
 
 }

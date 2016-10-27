@@ -1,5 +1,7 @@
 package com.myshop.tests.model;
 
+import java.io.IOException;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.sql2o.Connection;
@@ -23,10 +25,15 @@ public class ProductTest {
 	@Test
 	public void fullProductsModelTest() {
 		String complexSql = "SELECT * FROM myshop.full_products";
-
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	    try (Connection con = sql2o.open()) {
 	        for(Product p: con.createQuery(complexSql).addColumnMapping("product_id", "productID").executeAndFetch(Product.class)) {
-	        	System.out.println(p.getProductID() +" CATEGORY: "+ p.getCategory() + " LOCATION: " +p.getProductLocation().toString());
+	        	System.out.println(p.getProductID() +" \t" +p.getName() +" \tCATEGORY: "+ p.getCategory() + " LOCATION: " +p.getProductLocation().toString());
 	        }
 	    }
 	}
