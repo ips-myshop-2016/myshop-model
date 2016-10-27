@@ -1,6 +1,8 @@
 package com.myshop.model.order;
 
-public class Incidence {
+import com.myshop.model.contracts.DatabaseEntity;
+
+public class Incidence implements DatabaseEntity {
 	private int incidenceID;
 	private String description;
 	private boolean solve;
@@ -14,7 +16,8 @@ public class Incidence {
 	 * 
 	 * @return incidences ID
 	 */
-	public int getIncidenceID() {
+	@Override
+	public int getID() {
 		return incidenceID;
 	}
 	
@@ -22,7 +25,8 @@ public class Incidence {
 	 * 
 	 * @param incidenceID
 	 */
-	public void setIncidenceID(int incidenceID) {
+	@Override
+	public void setID(int incidenceID) {
 		this.incidenceID = incidenceID;
 	}
 
