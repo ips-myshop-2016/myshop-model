@@ -8,6 +8,21 @@ public class Product {
 	private Category category, subcategory;
 	private ProductLocation productLocation;
 	
+	public Product(){}
+	public Product(int ID,int stock, String nombre, String descripcion, double precio, double peso,
+			Category categoria, Category subcategoria, ProductLocation location){
+		this.productID=ID;
+		this.stock=stock;
+		this.name=nombre;
+		this.description=descripcion;
+		this.weight=peso;
+		this.price=precio;
+		this.category=categoria;
+		this.subcategory=subcategoria;
+		this.productLocation=location;
+		
+		
+	}
 	/**
 	 * @return the productID
 	 */
@@ -150,7 +165,7 @@ public class Product {
 	/**
 	 * @return the height
 	 */
-	public int getHeigth() { return productLocation.getHeight(); }
+	public int getHeight() { return productLocation.getHeight(); }
 	
 	/**
 	 * @param h height where this product is placed

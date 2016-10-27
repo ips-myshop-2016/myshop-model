@@ -1,24 +1,23 @@
-package com.myshop.model.product;
+package com.myshop.model.order;
 
 public class Incidence {
-	
 	private int incidenceID;
 	private String description;
 	private boolean solve;
 
 	
-	public Incidence(int incidenceID, String description) {
-		setIncidenceID(incidenceID);
-		setDescription(description);
-		setSolve(false);
+	public Incidence(){}
+	public Incidence(int incidenceID){
+		this.incidenceID=incidenceID;
 	}
 	/**
 	 * 
-	 * @return the id of the incidence
+	 * @return incidences ID
 	 */
 	public int getIncidenceID() {
 		return incidenceID;
 	}
+	
 	/**
 	 * 
 	 * @param incidenceID
@@ -26,6 +25,7 @@ public class Incidence {
 	public void setIncidenceID(int incidenceID) {
 		this.incidenceID = incidenceID;
 	}
+
 	/**
 	 * 
 	 * @return the description of the incidence
