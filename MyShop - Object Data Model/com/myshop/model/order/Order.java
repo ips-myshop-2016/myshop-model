@@ -1,7 +1,10 @@
-package com.myshop.model.product;
+package com.myshop.model.order;
 
 import java.util.Date;
 import java.util.List;
+
+import com.myshop.model.customer.Customer;
+import com.myshop.model.product.Status;
 
 public class Order{
 
@@ -9,8 +12,9 @@ public class Order{
 	private List<OrderItem> products;
 	private Status status;
 	private Date dateReceived;
+	private Customer customer;
 	
-	
+
 	/**
 	 * 
 	 * @return orders ID
@@ -74,6 +78,22 @@ public class Order{
 	public void setDateReceived(Date dateReceived) {
 		this.dateReceived = dateReceived;
 		
+	}
+	
+	/**
+	 * 
+	 * @return the customer
+	 */
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	/**
+	 * 
+	 * @param customer
+	 */
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }

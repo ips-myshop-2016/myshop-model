@@ -1,4 +1,4 @@
-package com.myshop.model.product;
+package com.myshop.model.order;
 
 public class MailBox {
 	

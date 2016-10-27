@@ -1,13 +1,30 @@
-package com.myshop.model.product;
+package com.myshop.model.order;
+
+import com.myshop.model.product.Product;
 
 public class OrderItem {
 
-	private int quantity;
+	private int orderItemID,quantity;
 	private Product product;
 	private boolean collected = false;
 	private Incidence incidence;
 	private MailBox mailbox;
 	
+	/**
+	 * 
+	 * @return orderItemID
+	 */
+	public int getOrderItemID() {
+		return orderItemID;
+	}
+
+	/**
+	 * 
+	 * @param orderItemID
+	 */
+	public void setOrderItemID(int orderItemID) {
+		this.orderItemID = orderItemID;
+	}
 	
 	/**
 	 * 
