@@ -17,6 +17,12 @@ public class WorkingPlan implements DatabaseEntity {
 	private WarehouseKeeper wk = new WarehouseKeeper();
 	private List<WorkingPlanItem> items;
 
+	public WorkingPlan(int iD, WarehouseKeeper wk, List<WorkingPlanItem> items) {
+		ID = iD;
+		this.wk = wk;
+		this.items = items;
+	}
+
 	/**
 	 * @return the wpID
 	 */

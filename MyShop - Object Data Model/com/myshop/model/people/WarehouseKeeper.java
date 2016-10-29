@@ -14,6 +14,14 @@ public class WarehouseKeeper implements DatabaseEntity, Person {
 	private int ID;
 	private String name, surname;
 	
+	public WarehouseKeeper(int iD, String name, String surname) {
+		ID = iD;
+		this.name = name;
+		this.surname = surname;
+	}
+	
+	public WarehouseKeeper() { }
+
 	/**
 	 * @return the warehouse keeper id.
 	 */

@@ -6,7 +6,12 @@ public class Customer implements DatabaseEntity {
 	
 	private int customerID;
 
+	public Customer(int customerID) {
+		this.customerID = customerID;
+	}
+	
 	public Customer(){}
+	
 	/**
 	 * 
 	 * @return customerID

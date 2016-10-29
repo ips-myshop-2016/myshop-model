@@ -8,6 +8,13 @@ public class Company extends Customer {
 	private int discount;
 	private User user;
 
+	public Company(int customerID, String name, int discount, User user) {
+		super(customerID);
+		this.name = name;
+		this.discount = discount;
+		this.user = user;
+	}
+
 	public Company(){}
 	
 	public String getName() {

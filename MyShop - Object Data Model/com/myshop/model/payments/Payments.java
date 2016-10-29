@@ -9,6 +9,12 @@ public class Payments implements DatabaseEntity{
 	private PaymentType type;
 	private boolean received = false;
 	
+	public Payments(int paymentId, PaymentType type, boolean received) {
+		this.paymentId = paymentId;
+		this.type = type;
+		this.received = received;
+	}
+
 	public Payments(){}
 
 	public PaymentType getType() {

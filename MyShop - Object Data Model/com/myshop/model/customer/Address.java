@@ -8,6 +8,13 @@ public class Address{
 	private String state;
 	private String cip_code;
 	
+	public Address(String street, String city, String state, String cip_code) {
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.cip_code = cip_code;
+	}
+
 	public Address(){}
 	
 	public String getStreet() {

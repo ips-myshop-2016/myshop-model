@@ -8,7 +8,14 @@ public class Incidence implements DatabaseEntity {
 	private boolean solve;
 
 	
+	public Incidence(int incidenceID, String description, boolean solve) {
+		this.incidenceID = incidenceID;
+		this.description = description;
+		this.solve = solve;
+	}
+
 	public Incidence(){}
+	
 	public Incidence(int incidenceID){
 		this.incidenceID=incidenceID;
 	}

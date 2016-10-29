@@ -11,6 +11,14 @@ public class IndividualCustomer extends Customer implements Person{
 	private Address address;
 	private CreditCards creditCard;
 	
+	public IndividualCustomer(String name, String surname, User user, Address address, CreditCards creditCard) {
+		this.name = name;
+		this.surname = surname;
+		this.user = user;
+		this.address = address;
+		this.creditCard = creditCard;
+	}
+
 	public IndividualCustomer(){}
 
 	@Override

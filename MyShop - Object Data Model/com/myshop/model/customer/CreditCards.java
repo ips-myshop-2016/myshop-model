@@ -10,6 +10,12 @@ public class CreditCards implements DatabaseEntity{
 	private int creditCardNumber;
 	private Date creditCardExDate;
 	
+	public CreditCards(int creditCardId, int creditCardNumber, Date creditCardExDate) {
+		this.creditCardId = creditCardId;
+		this.creditCardNumber = creditCardNumber;
+		this.creditCardExDate = creditCardExDate;
+	}
+
 	public CreditCards(){}
 	
 	public int getCreditCardNumber() {

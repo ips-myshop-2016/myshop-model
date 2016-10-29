@@ -10,21 +10,20 @@ public class Product implements DatabaseEntity {
 	private Category category, subcategory;
 	private ProductLocation productLocation;
 
-	public Product() {
+	public Product(int productID, int stock, String name, String description, double weight, double price,
+			Category category, Category subcategory, ProductLocation productLocation) {
+		this.productID = productID;
+		this.stock = stock;
+		this.name = name;
+		this.description = description;
+		this.weight = weight;
+		this.price = price;
+		this.category = category;
+		this.subcategory = subcategory;
+		this.productLocation = productLocation;
 	}
 
-	public Product(int ID, int stock, String nombre, String descripcion, double precio, double peso, Category categoria,
-			Category subcategoria, ProductLocation location) {
-		this.productID = ID;
-		this.stock = stock;
-		this.name = nombre;
-		this.description = descripcion;
-		this.weight = peso;
-		this.price = precio;
-		this.category = categoria;
-		this.subcategory = subcategoria;
-		this.productLocation = location;
-
+	public Product() {
 	}
 
 	/**

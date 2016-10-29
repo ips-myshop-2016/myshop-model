@@ -13,7 +13,17 @@ public class Order implements DatabaseEntity {
 	private Status status;
 	private Date dateReceived;
 	private Customer customer;
-	
+
+	public Order(int orderID, List<OrderItem> products, Status status, Date dateReceived, Customer customer) {
+		this.orderID = orderID;
+		this.products = products;
+		this.status = status;
+		this.dateReceived = dateReceived;
+		this.customer = customer;
+	}
+
+	public Order() {
+	}
 
 	/**
 	 * 
