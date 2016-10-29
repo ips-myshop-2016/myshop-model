@@ -5,8 +5,13 @@ import com.myshop.model.order.OrderItem;
 public class WorkingPlanItem {
 	
 	private OrderItem orderItem;
-	private boolean collected;
+	private boolean collected = false;
 	
+	public WorkingPlanItem(OrderItem orderItem, boolean collected) {
+		this.orderItem = orderItem;
+		this.collected = collected;
+	}
+
 	/**
 	 * @return the orderItem
 	 */

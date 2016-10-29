@@ -4,8 +4,15 @@ public class ProductLocation implements Comparable<ProductLocation> {
 	
 	private int corridor, position, height;
 	private Side side;
+
+	public ProductLocation(int corridor, int position, int height, Side side) {
+		this.corridor = corridor;
+		this.position = position;
+		this.height = height;
+		this.side = side;
+	}
 	
-	public ProductLocation() { }
+	public ProductLocation() {}
 
 	/**
 	 * @return the corridor

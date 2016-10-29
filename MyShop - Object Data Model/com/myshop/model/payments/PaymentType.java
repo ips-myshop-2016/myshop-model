@@ -7,6 +7,11 @@ public class PaymentType implements DatabaseEntity{
 	private int paymentTypeId;
 	private String name;
 	
+	public PaymentType(int paymentTypeId, String name) {
+		this.paymentTypeId = paymentTypeId;
+		this.name = name;
+	}
+
 	public PaymentType(){}
 
 	@Override

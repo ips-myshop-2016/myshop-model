@@ -10,6 +10,16 @@ public class OrderItem implements DatabaseEntity {
 	private Incidence incidence;
 	private MailBox mailbox;
 	
+	public OrderItem(int orderItemID, int quantity, Product product, Incidence incidence, MailBox mailbox) {
+		this.orderItemID = orderItemID;
+		this.quantity = quantity;
+		this.product = product;
+		this.incidence = incidence;
+		this.mailbox = mailbox;
+	}
+
+	public OrderItem() { }
+	
 	/**
 	 * 
 	 * @return orderItemID
