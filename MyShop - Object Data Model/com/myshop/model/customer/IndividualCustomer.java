@@ -3,12 +3,13 @@ package com.myshop.model.customer;
 import com.myshop.model.contracts.Person;
 import com.myshop.model.user.User;
 
-public class IndividualCustomer implements Person{
+public class IndividualCustomer extends Customer implements Person{
 	
-	private Customer customer;
 	private String name;
 	private String surname;
 	private User user;
+	private Address address;
+	private CreditCards creditCard;
 	
 	public IndividualCustomer(){}
 
@@ -40,12 +41,20 @@ public class IndividualCustomer implements Person{
 		this.user = user;
 	}
 
-	public Customer getCustomer() {
-		return customer;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public CreditCards getCreditCard() {
+		return creditCard;
+	}
+
+	public void setCreditCard(CreditCards creditCard) {
+		this.creditCard = creditCard;
 	}
 
 }

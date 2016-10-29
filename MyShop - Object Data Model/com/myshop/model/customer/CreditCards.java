@@ -7,18 +7,11 @@ import com.myshop.model.contracts.DatabaseEntity;
 public class CreditCards implements DatabaseEntity{
 
 	private int creditCardId;
-	private IndividualCustomer owner;
 	private int creditCardNumber;
 	private Date creditCardExDate;
 	
 	public CreditCards(){}
 	
-	public IndividualCustomer getOwner() {
-		return owner;
-	}
-	public void setOwner(IndividualCustomer owner) {
-		this.owner = owner;
-	}
 	public int getCreditCardNumber() {
 		return creditCardNumber;
 	}

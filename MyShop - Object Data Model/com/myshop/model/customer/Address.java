@@ -3,7 +3,6 @@ package com.myshop.model.customer;
 
 public class Address{
 
-	private IndividualCustomer customer;
 	private String street;
 	private String city;
 	private String state;
@@ -11,12 +10,6 @@ public class Address{
 	
 	public Address(){}
 	
-	public IndividualCustomer getCustomer() {
-		return customer;
-	}
-	public void setCustomer(IndividualCustomer customer) {
-		this.customer = customer;
-	}
 	public String getStreet() {
 		return street;
 	}

@@ -2,9 +2,8 @@ package com.myshop.model.customer;
 
 import com.myshop.model.user.User;
 
-public class Company {
+public class Company extends Customer {
 	
-	private Customer customer;
 	private String name;
 	private int discount;
 	private User user;
@@ -33,14 +32,6 @@ public class Company {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
 	}
 
 }

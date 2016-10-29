@@ -7,7 +7,7 @@ public class Payments implements DatabaseEntity{
 	
 	private int paymentId;
 	private PaymentType type;
-	private boolean received;
+	private boolean received = false;
 	
 	public Payments(){}
 
