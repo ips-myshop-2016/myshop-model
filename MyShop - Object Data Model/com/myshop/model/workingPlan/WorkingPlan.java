@@ -3,7 +3,7 @@ package com.myshop.model.workingPlan;
 import java.util.List;
 
 import com.myshop.model.contracts.DatabaseEntity;
-import com.myshop.model.people.WarehouseKeeper;
+import com.myshop.model.warehouseKeeper.WarehouseKeeper;
 
 /**
  * Working Plan ODM.

@@ -1,4 +1,4 @@
-package com.myshop.model.people;
+package com.myshop.model.warehouseKeeper;
 
 import com.myshop.model.contracts.DatabaseEntity;
 import com.myshop.model.contracts.Person;
