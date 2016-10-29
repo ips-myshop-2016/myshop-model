@@ -11,6 +11,7 @@ public class CreditCards implements DatabaseEntity{
 	private int creditCardNumber;
 	private Date creditCardExDate;
 	
+	public CreditCards(){}
 	
 	public IndividualCustomer getOwner() {
 		return owner;
