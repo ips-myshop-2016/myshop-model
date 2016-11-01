@@ -1,5 +1,6 @@
 package com.myshop.model.order;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -48,7 +49,8 @@ public class Order implements DatabaseEntity {
 	 * @return products
 	 */
 	public List<OrderItem> getProducts() {
-		return products;
+		Collections.sort(products);
+		return this.products;
 	}
 
 	/**

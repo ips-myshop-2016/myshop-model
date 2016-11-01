@@ -3,7 +3,7 @@ package com.myshop.model.order;
 import com.myshop.model.contracts.DatabaseEntity;
 import com.myshop.model.product.Product;
 
-public class OrderItem implements DatabaseEntity {
+public class OrderItem implements DatabaseEntity,Comparable<OrderItem>{
 
 	private int orderItemID,quantity;
 	private Product product;
@@ -404,4 +404,10 @@ public class OrderItem implements DatabaseEntity {
 		}
 		mailbox.setID(mailBoxID);
 	}
+	
+	@Override
+	public int compareTo(OrderItem o) {
+		return this.product.getProductLocation().compareTo(o.getProduct().getProductLocation());
+	}
+	
 }
