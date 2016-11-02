@@ -6,12 +6,12 @@ public class Product implements DatabaseEntity {
 
 	private int productID, stock;
 	private String name, description;
-	private double weight, price;
+	private double weight, price, companyPrice;
 	private Category category, subcategory;
 	private ProductLocation productLocation;
 
 	public Product(int productID, int stock, String name, String description, double weight, double price,
-			Category category, Category subcategory, ProductLocation productLocation) {
+			Category category, Category subcategory, ProductLocation productLocation, double companyPrice) {
 		this.productID = productID;
 		this.stock = stock;
 		this.name = name;
@@ -21,6 +21,7 @@ public class Product implements DatabaseEntity {
 		this.category = category;
 		this.subcategory = subcategory;
 		this.productLocation = productLocation;
+		this.companyPrice = companyPrice;
 	}
 
 	public Product() {
@@ -235,5 +236,13 @@ public class Product implements DatabaseEntity {
 			productLocation = new ProductLocation();
 		}
 		productLocation.setHeight(h);
+	}
+
+	public double getCompanyPrice() {
+		return companyPrice;
+	}
+
+	public void setCompanyPrice(double companyPrice) {
+		this.companyPrice = companyPrice;
 	}
 }
