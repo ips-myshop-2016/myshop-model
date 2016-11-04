@@ -64,5 +64,9 @@ public class IndividualCustomer extends Customer implements Person{
 	public void setCreditCard(CreditCards creditCard) {
 		this.creditCard = creditCard;
 	}
+	
+	public String toString() {
+		return this.name + " " + this.surname;
+	}
 
 }
