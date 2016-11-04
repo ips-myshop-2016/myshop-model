@@ -1,5 +1,6 @@
 package com.myshop.model.order;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,9 +21,11 @@ public class Order implements DatabaseEntity {
 		this.status = status;
 		this.dateReceived = dateReceived;
 		this.customer = customer;
+		products = new ArrayList<OrderItem>();
 	}
 
 	public Order() {
+		products = new ArrayList<OrderItem>();
 	}
 
 	/**

@@ -1,6 +1,6 @@
 package com.myshop.model.customer;
 
-import java.sql.Date;
+import java.util.Date;
 
 import com.myshop.model.contracts.DatabaseEntity;
 
