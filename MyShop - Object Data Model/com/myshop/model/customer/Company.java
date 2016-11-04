@@ -5,13 +5,11 @@ import com.myshop.model.user.User;
 public class Company extends Customer {
 	
 	private String name;
-	private int discount;
 	private User user;
 
-	public Company(int customerID, String name, int discount, User user) {
+	public Company(int customerID, String name, User user) {
 		super(customerID);
 		this.name = name;
-		this.discount = discount;
 		this.user = user;
 	}
 
@@ -25,20 +23,16 @@ public class Company extends Customer {
 		this.name = name;
 	}
 
-	public int getDiscount() {
-		return discount;
-	}
-
-	public void setDiscount(int discount) {
-		this.discount = discount;
-	}
-
 	public User getUser() {
 		return user;
 	}
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+	
+	public String toString () {
+		return this.name;
 	}
 
 }

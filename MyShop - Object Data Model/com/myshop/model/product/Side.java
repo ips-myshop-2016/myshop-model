@@ -2,7 +2,7 @@ package com.myshop.model.product;
 
 public enum Side {
 
-	RIGHT ("derecha"), LEFT ("izquierda");
+	RIGHT ("right"), LEFT ("left");
 	
 	private String lado;
 	
