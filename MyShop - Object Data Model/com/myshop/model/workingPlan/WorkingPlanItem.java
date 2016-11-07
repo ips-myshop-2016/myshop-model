@@ -2,7 +2,7 @@ package com.myshop.model.workingPlan;
 
 import com.myshop.model.order.OrderItem;
 
-public class WorkingPlanItem {
+public class WorkingPlanItem  {
 	
 	private OrderItem orderItem;
 	private boolean collected = false;
@@ -31,4 +31,5 @@ public class WorkingPlanItem {
 	 * @param collected
 	 */
 	public void setCollected(boolean collected) { this.collected = collected; }
+
 }
