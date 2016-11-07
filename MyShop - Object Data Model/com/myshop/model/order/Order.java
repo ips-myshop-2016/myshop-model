@@ -84,6 +84,9 @@ public class Order implements DatabaseEntity {
 		if(estado.equals(Status.PAGADO)){
 			status = Status.PAGADO;
 		}
+		if(estado.equals(Status.INCIDENCIA)){
+			status = Status.INCIDENCIA;
+		}
 		if(estado.equals(Status.PENDIENTE_EMPAQUETADO)){
 			status = Status.PENDIENTE_EMPAQUETADO;
 		}
