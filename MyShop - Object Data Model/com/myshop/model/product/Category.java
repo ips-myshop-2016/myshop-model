@@ -1,5 +1,6 @@
 package com.myshop.model.product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Category {
@@ -9,6 +10,7 @@ public class Category {
 	
 	public Category(String name) {
 		this.name = name;
+		children = new ArrayList<Category>();
 	}
 	
 	/**
