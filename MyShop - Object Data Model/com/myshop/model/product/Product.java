@@ -1,5 +1,7 @@
 package com.myshop.model.product;
 
+import java.util.List;
+
 import com.myshop.model.contracts.DatabaseEntity;
 
 public class Product implements DatabaseEntity {
@@ -7,7 +9,7 @@ public class Product implements DatabaseEntity {
 	private int productID, stock;
 	private String name, description;
 	private double weight, price, companyPrice;
-	private Category category, subcategory;
+	private Category category;
 	private ProductLocation productLocation;
 
 	public Product(int productID, int stock, String name, String description, double weight, double price,
@@ -19,7 +21,6 @@ public class Product implements DatabaseEntity {
 		this.weight = weight;
 		this.price = price;
 		this.category = category;
-		this.subcategory = subcategory;
 		this.productLocation = productLocation;
 		this.companyPrice = companyPrice;
 	}
@@ -135,16 +136,16 @@ public class Product implements DatabaseEntity {
 	/**
 	 * @return the subcategory
 	 */
-	public String getSubcategory() {
-		return subcategory.getCategoryName();
+	public List<Category> getSubCategory(){
+		return category.getChildren();
 	}
 
 	/**
 	 * @param subcategory
 	 *            the subcategory to set
 	 */
-	public void setSubcategory(String subcategory) {
-		this.subcategory = new Category(subcategory);
+	public void addSubcategory(String subcategory) {
+		category.addChild(new Category(subcategory));
 	}
 
 	/**

@@ -1,6 +1,9 @@
 package com.myshop.model.order;
 
+import java.util.List;
+
 import com.myshop.model.contracts.DatabaseEntity;
+import com.myshop.model.product.Category;
 import com.myshop.model.product.Product;
 
 public class OrderItem implements DatabaseEntity {
@@ -207,8 +210,8 @@ public class OrderItem implements DatabaseEntity {
 	 * 
 	 * @return product subcategory
 	 */
-	public String getProductSubCategory(){
-		return product.getSubcategory();
+	public List<Category> getProductSubCategory(){
+		return product.getSubCategory();
 	}
 	
 	/**
@@ -219,7 +222,7 @@ public class OrderItem implements DatabaseEntity {
 		if(product==null){
 			product=new Product();
 		}
-		product.setSubcategory(subcategory);
+		product.addSubcategory(subcategory);
 	}
 	
 	/**
