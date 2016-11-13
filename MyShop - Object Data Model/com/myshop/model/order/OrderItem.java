@@ -12,6 +12,7 @@ public class OrderItem implements DatabaseEntity {
 	private Product product;
 	private Incidence incidence;
 	private MailBox mailbox;
+	private Order parent;
 	
 	public OrderItem(int orderItemID, int quantity, Product product, Incidence incidence, MailBox mailbox) {
 		this.orderItemID = orderItemID;
@@ -406,5 +407,13 @@ public class OrderItem implements DatabaseEntity {
 			mailbox = new MailBox(mailBoxID);
 		}
 		mailbox.setID(mailBoxID);
+	}
+
+	public Order getParent() {
+		return parent;
+	}
+
+	public void setParent(Order parent) {
+		this.parent = parent;
 	}
 }

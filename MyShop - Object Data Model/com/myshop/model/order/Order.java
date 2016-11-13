@@ -75,27 +75,7 @@ public class Order implements DatabaseEntity {
 	 * @param status
 	 */
 	public void setStatus(String estado) {
-		if(estado.equals(Status.EMPAQUETANDO)){
-			status = Status.EMPAQUETANDO;
-		}
-		if(estado.equals(Status.FINALIZADO)){
-			status = Status.FINALIZADO;
-		}
-		if(estado.equals(Status.PAGADO)){
-			status = Status.PAGADO;
-		}
-		if(estado.equals(Status.INCIDENCIA)){
-			status = Status.INCIDENCIA;
-		}
-		if(estado.equals(Status.PENDIENTE_EMPAQUETADO)){
-			status = Status.PENDIENTE_EMPAQUETADO;
-		}
-		if(estado.equals(Status.PENDIENTE_PAGO)){
-			status = Status.PENDIENTE_PAGO;
-		}
-		if(estado.equals(Status.PREPARANDO)){
-			status = Status.PREPARANDO;
-		}
+		status = Status.valueOf(estado);
 	}
 	
 	/**
