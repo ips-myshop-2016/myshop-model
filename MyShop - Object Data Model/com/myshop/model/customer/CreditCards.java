@@ -4,40 +4,45 @@ import java.util.Date;
 
 import com.myshop.model.contracts.DatabaseEntity;
 
-public class CreditCards implements DatabaseEntity{
+public class CreditCards implements DatabaseEntity {
 
-	private int creditCardId;
-	private int creditCardNumber;
+	private int ID, creditCardNumber;
 	private Date creditCardExDate;
-	
-	public CreditCards(int creditCardId, int creditCardNumber, Date creditCardExDate) {
-		this.creditCardId = creditCardId;
+
+	public CreditCards(int ID, int creditCardNumber, Date creditCardExDate) {
+		this.ID = ID;
 		this.creditCardNumber = creditCardNumber;
 		this.creditCardExDate = creditCardExDate;
 	}
 
-	public CreditCards(){}
-	
 	public int getCreditCardNumber() {
 		return creditCardNumber;
 	}
-	public void setCreditCardNumber(int creditCardNumber) {
+
+	public CreditCards setCreditCardNumber(int creditCardNumber) {
 		this.creditCardNumber = creditCardNumber;
+		return this;
 	}
+
 	public Date getCreditCardExDate() {
 		return creditCardExDate;
 	}
-	public void setCreditCardExDate(Date creditCardExDate) {
+
+	public CreditCards setCreditCardExDate(Date creditCardExDate) {
 		this.creditCardExDate = creditCardExDate;
+		return this;
 	}
+
 	@Override
 	public int getID() {
-		return creditCardId;
+		return ID;
 	}
+
 	@Override
-	public void setID(int creditCardId) {
-		this.creditCardId = creditCardId;
-		
+	public CreditCards setID(int ID) {
+		this.ID = ID;
+		return this;
+
 	}
-	
+
 }

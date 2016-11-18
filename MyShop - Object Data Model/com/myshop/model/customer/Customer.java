@@ -3,22 +3,21 @@ package com.myshop.model.customer;
 import com.myshop.model.contracts.DatabaseEntity;
 
 public class Customer implements DatabaseEntity {
-	
-	private int customerID;
 
-	public Customer(int customerID) {
-		this.customerID = customerID;
+	private int ID;
+	private Address address;
+
+	public Customer(int ID) {
+		this.ID = ID;
 	}
-	
-	public Customer(){}
-	
+
 	/**
 	 * 
 	 * @return customerID
 	 */
 	@Override
 	public int getID() {
-		return customerID;
+		return ID;
 	}
 
 	/**
@@ -26,10 +25,18 @@ public class Customer implements DatabaseEntity {
 	 * @param customerID
 	 */
 	@Override
-	public void setID(int customerID) {
-		this.customerID = customerID;
+	public Customer setID(int customerID) {
+		throw new RuntimeException(
+				"The ID of the customer must be set at the constructor.");
 	}
-	
-	
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public Customer setAddress(Address address) {
+		this.address = address;
+		return this;
+	}
 
 }

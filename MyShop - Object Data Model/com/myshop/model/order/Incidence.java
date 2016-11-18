@@ -3,38 +3,40 @@ package com.myshop.model.order;
 import com.myshop.model.contracts.DatabaseEntity;
 
 public class Incidence implements DatabaseEntity {
-	private int incidenceID;
+
+	private int ID;
 	private String description;
-	private boolean solve;
+	private boolean solved;
 
-	
-	public Incidence(int incidenceID, String description, boolean solve) {
-		this.incidenceID = incidenceID;
+
+	public Incidence(int incidenceID, String description) {
+		this.ID = incidenceID;
 		this.description = description;
-		this.solve = solve;
+		this.solved = false;
 	}
 
-	public Incidence(){}
-	
-	public Incidence(int incidenceID){
-		this.incidenceID=incidenceID;
+	public Incidence(String description) {
+		this.description = description;
+		this.solved = false;
 	}
+	
 	/**
 	 * 
 	 * @return incidences ID
 	 */
 	@Override
 	public int getID() {
-		return incidenceID;
+		return ID;
 	}
-	
+
 	/**
 	 * 
-	 * @param incidenceID
+	 * @param ID
 	 */
 	@Override
-	public void setID(int incidenceID) {
-		this.incidenceID = incidenceID;
+	public Incidence setID(int ID) {
+		this.ID = ID;
+		return this;
 	}
 
 	/**
@@ -44,13 +46,14 @@ public class Incidence implements DatabaseEntity {
 	public String getDescription() {
 		return description;
 	}
-	
+
 	/**
 	 * 
 	 * @param description
 	 */
-	public void setDescription(String description) {
+	public Incidence setDescription(String description) {
 		this.description = description;
+		return this;
 	}
 
 	/**
@@ -58,15 +61,16 @@ public class Incidence implements DatabaseEntity {
 	 * @return if the incidence is solve
 	 */
 	public boolean isSolve() {
-		return solve;
+		return solved;
 	}
 
 	/**
 	 * 
 	 * @param solve
 	 */
-	public void setSolve(boolean solve) {
-		this.solve = solve;
+	public Incidence setSolve(boolean solve) {
+		this.solved = solve;
+		return this;
 	}
 
 }

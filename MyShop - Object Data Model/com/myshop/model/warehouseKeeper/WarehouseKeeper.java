@@ -10,54 +10,70 @@ import com.myshop.model.contracts.Person;
  * @author Guillermo Facundo Colunga
  */
 public class WarehouseKeeper implements DatabaseEntity, Person {
-	
+
 	private int ID;
 	private String name, surname;
-	
-	public WarehouseKeeper(int iD, String name, String surname) {
-		ID = iD;
+
+	public WarehouseKeeper(int ID, String name, String surname) {
+		this.ID = ID;
 		this.name = name;
 		this.surname = surname;
 	}
-	
-	public WarehouseKeeper() { }
+
+	@Deprecated
+	public WarehouseKeeper() {}
 
 	/**
 	 * @return the warehouse keeper id.
 	 */
 	@Override
-	public int getID() { return this.ID; }
-	
+	public int getID() {
+		return this.ID;
+	}
+
 	/**
 	 * @param warehouseKeeperID the warehouse keeper id.
 	 */
 	@Override
-	public void setID(int warehouseKeeperID) { this.ID = warehouseKeeperID; }
-	
+	public WarehouseKeeper setID(int warehouseKeeperID) {
+		this.ID = warehouseKeeperID;
+		return this;
+	}
+
 	/**
 	 * @return the name of the warehouse keeper.
 	 */
 	@Override
-	public String getName() { return this.name; }
-	
+	public String getName() {
+		return this.name;
+	}
+
 	/**
 	 * @param name the name of the warehouse keeper.
 	 */
 	@Override
-	public void setName(String name) { this.name = name; }
-	
+	public WarehouseKeeper setName(String name) {
+		this.name = name;
+		return this;
+	}
+
 	/**
 	 * @return the surname of the warehouse keeper.
 	 */
 	@Override
-	public String getSurname() { return this.surname; }
-	
+	public String getSurname() {
+		return this.surname;
+	}
+
 	/**
 	 * @param surname the surname of the warehouse keeper.
 	 */
 	@Override
-	public void setSurname(String surname) { this.surname = surname; }
-	
+	public WarehouseKeeper setSurname(String surname) {
+		this.surname = surname;
+		return this;
+	}
+
 	@Override
 	public String toString() {
 		return getName() + " " + getSurname();

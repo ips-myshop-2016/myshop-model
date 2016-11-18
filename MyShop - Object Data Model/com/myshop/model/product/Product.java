@@ -6,15 +6,23 @@ import com.myshop.model.contracts.DatabaseEntity;
 
 public class Product implements DatabaseEntity {
 
-	private int productID, stock;
+	private int ID, stock;
 	private String name, description;
 	private double weight, price, companyPrice;
 	private Category category;
 	private ProductLocation productLocation;
+	private Dimension3D dimensions;
+	private IVAType iva;
 
-	public Product(int productID, int stock, String name, String description, double weight, double price,
-			Category category, Category subcategory, ProductLocation productLocation, double companyPrice) {
-		this.productID = productID;
+	/**
+	 * You should use a parameter vector structure to set all the attributes.
+	 */
+	@Deprecated
+	public Product(int productID, int stock, String name, String description,
+			double weight, double price, Category category,
+			Category subcategory, ProductLocation productLocation,
+			double companyPrice) {
+		this.ID = productID;
 		this.stock = stock;
 		this.name = name;
 		this.description = description;
@@ -25,22 +33,21 @@ public class Product implements DatabaseEntity {
 		this.companyPrice = companyPrice;
 	}
 
-	public Product() {
-	}
+	public Product() {}
 
 	/**
 	 * @return the productID
 	 */
 	public int getID() {
-		return productID;
+		return ID;
 	}
 
 	/**
-	 * @param productID
-	 *            the productID to set
+	 * @param productID the productID to set
 	 */
-	public void setID(int productID) {
-		this.productID = productID;
+	public Product setID(int productID) {
+		this.ID = productID;
+		return this;
 	}
 
 	/**
@@ -51,11 +58,11 @@ public class Product implements DatabaseEntity {
 	}
 
 	/**
-	 * @param stock
-	 *            the stock to set
+	 * @param stock the stock to set
 	 */
-	public void setStock(int stock) {
+	public Product setStock(int stock) {
 		this.stock = stock;
+		return this;
 	}
 
 	/**
@@ -66,11 +73,11 @@ public class Product implements DatabaseEntity {
 	}
 
 	/**
-	 * @param name
-	 *            the name to set
+	 * @param name the name to set
 	 */
-	public void setName(String name) {
+	public Product setName(String name) {
 		this.name = name;
+		return this;
 	}
 
 	/**
@@ -81,11 +88,11 @@ public class Product implements DatabaseEntity {
 	}
 
 	/**
-	 * @param description
-	 *            the description to set
+	 * @param description the description to set
 	 */
-	public void setDescription(String description) {
+	public Product setDescription(String description) {
 		this.description = description;
+		return this;
 	}
 
 	/**
@@ -96,11 +103,11 @@ public class Product implements DatabaseEntity {
 	}
 
 	/**
-	 * @param weight
-	 *            the weight to set
+	 * @param weight the weight to set
 	 */
-	public void setWeight(double weight) {
+	public Product setWeight(double weight) {
 		this.weight = weight;
+		return this;
 	}
 
 	/**
@@ -111,41 +118,41 @@ public class Product implements DatabaseEntity {
 	}
 
 	/**
-	 * @param price
-	 *            the price to set
+	 * @param price the price to set
 	 */
-	public void setPrice(double price) {
+	public Product setPrice(double price) {
 		this.price = price;
+		return this;
 	}
 
 	/**
 	 * @return the category
 	 */
 	public String getCategory() {
-		return category.getCategoryName();
+		return category.getName();
 	}
 
 	/**
-	 * @param category
-	 *            the category to set
+	 * @param category the category to set
 	 */
-	public void setCategory(String category) {
+	public Product setCategory(String category) {
 		this.category = new Category(category);
+		return this;
 	}
 
 	/**
 	 * @return the subcategory
 	 */
-	public List<Category> getSubCategory(){
+	public List<Category> getSubCategory() {
 		return category.getChildren();
 	}
 
 	/**
-	 * @param subcategory
-	 *            the subcategory to set
+	 * @param subcategory the subcategory to set
 	 */
-	public void addSubcategory(String subcategory) {
+	public Product addSubcategory(String subcategory) {
 		category.addChild(new Category(subcategory));
+		return this;
 	}
 
 	/**
@@ -156,11 +163,11 @@ public class Product implements DatabaseEntity {
 	}
 
 	/**
-	 * @param productLocation
-	 *            the productLocation to set
+	 * @param productLocation the productLocation to set
 	 */
-	public void setProductLocation(ProductLocation productLocation) {
+	public Product setProductLocation(ProductLocation productLocation) {
 		this.productLocation = productLocation;
+		return this;
 	}
 
 	/**
@@ -171,14 +178,15 @@ public class Product implements DatabaseEntity {
 	}
 
 	/**
-	 * @param corridor
-	 *            corridor the be set for this product.
+	 * @param corridor corridor the be set for this product.
 	 */
-	public void setCorridor(int corridor) {
+	@Deprecated
+	public Product setCorridor(int corridor) {
 		if (productLocation == null) {
 			productLocation = new ProductLocation();
 		}
 		productLocation.setCorridor(corridor);
+		return this;
 	}
 
 	/**
@@ -189,10 +197,10 @@ public class Product implements DatabaseEntity {
 	}
 
 	/**
-	 * @param side
-	 *            the side to set
+	 * @param side the side to set
 	 */
-	public void setSide(String side) {
+	@Deprecated
+	public Product setSide(String side) {
 		if (productLocation == null) {
 			productLocation = new ProductLocation();
 		}
@@ -201,6 +209,7 @@ public class Product implements DatabaseEntity {
 			productLocation.setSide(Side.LEFT);
 		else
 			productLocation.setSide(Side.RIGHT);
+		return this;
 	}
 
 	/**
@@ -211,14 +220,15 @@ public class Product implements DatabaseEntity {
 	}
 
 	/**
-	 * @param pos
-	 *            position of the product.
+	 * @param pos position of the product.
 	 */
-	public void setPosition(int pos) {
+	@Deprecated
+	public Product setPosition(int pos) {
 		if (productLocation == null) {
 			productLocation = new ProductLocation();
 		}
 		productLocation.setPosition(pos);
+		return this;
 	}
 
 	/**
@@ -229,21 +239,40 @@ public class Product implements DatabaseEntity {
 	}
 
 	/**
-	 * @param h
-	 *            height where this product is placed
+	 * @param h height where this product is placed
 	 */
-	public void setHeight(int h) {
+	@Deprecated
+	public Product setHeight(int h) {
 		if (productLocation == null) {
 			productLocation = new ProductLocation();
 		}
 		productLocation.setHeight(h);
+		return this;
 	}
 
 	public double getCompanyPrice() {
 		return companyPrice;
 	}
 
-	public void setCompanyPrice(double companyPrice) {
+	public Product setCompanyPrice(double companyPrice) {
 		this.companyPrice = companyPrice;
+		return this;
+	}
+
+	public Dimension3D getDimensions() {
+		return dimensions;
+	}
+
+	public Product setDimensions(Dimension3D dimensions) {
+		this.dimensions = dimensions;
+		return this;
+	}
+
+	public IVAType getIva() {
+		return iva;
+	}
+
+	public void setIva(IVAType iva) {
+		this.iva = iva;
 	}
 }

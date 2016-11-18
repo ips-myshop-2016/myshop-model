@@ -8,40 +8,46 @@ import com.myshop.model.product.Product;
 
 public class OrderItem implements DatabaseEntity {
 
-	private int orderItemID,quantity;
+	private int ID, quantity;
 	private Product product;
 	private Incidence incidence;
 	private MailBox mailbox;
 	private Order parent;
-	
-	public OrderItem(int orderItemID, int quantity, Product product, Incidence incidence, MailBox mailbox) {
-		this.orderItemID = orderItemID;
+
+	public OrderItem(int ID, int quantity, Product product, Incidence incidence,
+			MailBox mailbox) {
+		this.ID = ID;
 		this.quantity = quantity;
 		this.product = product;
 		this.incidence = incidence;
 		this.mailbox = mailbox;
 	}
-
-	public OrderItem() { }
 	
+	public OrderItem(int ID, int quantity, Product product) {
+		this.ID = ID;
+		this.quantity = quantity;
+		this.product = product;
+	}
+
 	/**
 	 * 
 	 * @return orderItemID
 	 */
 	@Override
 	public int getID() {
-		return orderItemID;
+		return ID;
 	}
 
 	/**
 	 * 
-	 * @param orderItemID
+	 * @param ID
 	 */
 	@Override
-	public void setID(int orderItemID) {
-		this.orderItemID = orderItemID;
+	public OrderItem setID(int ID) {
+		this.ID = ID;
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return products quantity
@@ -54,8 +60,9 @@ public class OrderItem implements DatabaseEntity {
 	 * 
 	 * @param quantity
 	 */
-	public void setQuantity(int quantity) {
+	public OrderItem setQuantity(int quantity) {
 		this.quantity = quantity;
+		return this;
 	}
 
 	/**
@@ -70,236 +77,265 @@ public class OrderItem implements DatabaseEntity {
 	 * 
 	 * @param product
 	 */
-	public void setProduct(Product product) {
+	public OrderItem setProduct(Product product) {
 		this.product = product;
+		return this;
 	}
 
 	/**
 	 * 
 	 * @return productID
 	 */
-	public int getProductID(){
+	public int getProductID() {
 		return product.getID();
 	}
-	
+
 	/**
 	 * 
 	 * @param productid
 	 */
-	public void setProductID(int id){
-		if(product==null){
+	public OrderItem setProductID(int id) {
+		if (product == null) {
 			product = new Product();
 		}
 		product.setID(id);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return product stock
 	 */
-	public int getProductStock(){
+	public int getProductStock() {
 		return product.getStock();
 	}
-	
+
 	/**
 	 * 
 	 * @param product stock
 	 */
-	public void setProductStock(int stock){
-		if(product==null){
-			product=new Product();
+	public OrderItem setProductStock(int stock) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.setStock(stock);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return product name
 	 */
-	public String getProductName(){
+	public String getProductName() {
 		return product.getName();
 	}
-	
+
 	/**
 	 * 
 	 * @param product name
 	 */
-	public void setProductName(String name){
-		if(product==null){
-			product=new Product();
+	public OrderItem setProductName(String name) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.setName(name);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return product description
 	 */
-	public String getProductDescription(){
+	public String getProductDescription() {
 		return product.getDescription();
 	}
-	
+
 	/**
 	 * 
 	 * @param product description
 	 */
-	public void setProductDescription(String description){
-		if(product==null){
-			product=new Product();
+	public OrderItem setProductDescription(String description) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.setDescription(description);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return product weight
 	 */
-	public double getProductWeight(){
+	public double getProductWeight() {
 		return product.getWeight();
 	}
-	
+
 	/**
 	 * 
 	 * @param product weight
 	 */
-	public void setProductWeight(double weight){
-		if(product==null){
-			product=new Product();
+	public OrderItem setProductWeight(double weight) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.setWeight(weight);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return product price
 	 */
-	public double getProductPrice(){
+	public double getProductPrice() {
 		return product.getPrice();
 	}
-	
+
 	/**
 	 * 
 	 * @param product price
 	 */
-	public void setProductPrice(double price){
-		if(product==null){
-			product=new Product();
+	public OrderItem setProductPrice(double price) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.setPrice(price);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return product category
 	 */
-	public String getProductCategory(){
+	public String getProductCategory() {
 		return product.getCategory();
 	}
-	
+
 	/**
 	 * 
 	 * @param product category
 	 */
-	public void setProductCategory(String category){
-		if(product==null){
-			product=new Product();
+	public OrderItem setProductCategory(String category) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.setCategory(category);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return product subcategory
 	 */
-	public List<Category> getProductSubCategory(){
+	public List<Category> getProductSubCategory() {
 		return product.getSubCategory();
 	}
-	
+
 	/**
 	 * 
 	 * @param product subcategory
 	 */
-	public void setProductSubCategory(String subcategory){
-		if(product==null){
-			product=new Product();
+	public OrderItem setProductSubCategory(String subcategory) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.addSubcategory(subcategory);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return productLocation corridor
 	 */
-	public int getProductProductLocationCorridor(){
+	public int getProductProductLocationCorridor() {
 		return product.getCorridor();
 	}
-	
+
 	/**
 	 * 
 	 * @param productLocation corridor
 	 */
-	public void setProductProductLocationCorridor(int corridor){
-		if(product==null){
-			product=new Product();
+	@Deprecated
+	public OrderItem setProductProductLocationCorridor(int corridor) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.setCorridor(corridor);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return productLocation position
 	 */
-	public int getProductProductLocationPosition(){
+	public int getProductProductLocationPosition() {
 		return product.getPosition();
 	}
-	
+
 	/**
 	 * 
 	 * @param productLocation position
 	 */
-	public void setProductProductLocationPosition(int position){
-		if(product==null){
-			product=new Product();
+	@Deprecated
+	public OrderItem setProductProductLocationPosition(int position) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.setPosition(position);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return productLocation Height
 	 */
-	public int getProductProductLocationHeight(){
+	public int getProductProductLocationHeight() {
 		return product.getHeight();
 	}
-	
+
 	/**
 	 * 
 	 * @param productLocation Heigth
 	 */
-	public void setProductProductLocationHeight(int height){
-		if(product==null){
-			product=new Product();
+	@Deprecated
+	public OrderItem setProductProductLocationHeight(int height) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.setHeight(height);
+
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return productLocation side
 	 */
-	public String getProductProductLocationSide(){
+	public String getProductProductLocationSide() {
 		return product.getSide();
 	}
-	
+
 	/**
 	 * 
 	 * @param productLocation side
 	 */
-	public void setProductProductLocationSide(String side){
-		if(product==null){
-			product=new Product();
+	@Deprecated
+	public OrderItem setProductProductLocationSide(String side) {
+		if (product == null) {
+			product = new Product();
 		}
 		product.setSide(side);
+
+		return this;
 	}
 
 	/**
@@ -314,66 +350,19 @@ public class OrderItem implements DatabaseEntity {
 	 * 
 	 * @param incidence
 	 */
-	public void setIncidence(Incidence incidence) {
+	public OrderItem setIncidence(Incidence incidence) {
 		this.incidence = incidence;
+		return this;
 	}
 
 	/**
 	 * 
-	 * @return IncidenceID
-	 */
-	public int getIncidenceID(){
-		return incidence.getID();
-	}
-	
-	/**
-	 * 
-	 * @param incidenceID
-	 */
-	public void setIncidenceID(int incidenceID){
-		if(incidence==null){
-			incidence = new Incidence();
-		}
-		incidence.setID(incidenceID);
-	}
-	
-	/**
-	 * 
 	 * @return incidences description
 	 */
-	public String getIncidenceDescription(){
+	public String getIncidenceDescription() {
 		return incidence.getDescription();
 	}
-	
-	/**
-	 * 
-	 * @param incidences description
-	 */
-	public void setIncidenceDescription(String description){
-		if(incidence==null){
-			incidence = new Incidence();
-		}
-		incidence.setDescription(description);
-	}
-	
-	/**
-	 * 
-	 * @return incidences solve
-	 */
-	public boolean isIncidenceSolve(){
-		return incidence.isSolve();
-	}
-	
-	/**
-	 * 
-	 * @param incidences solve
-	 */
-	public void setIncidenceSolve(boolean solve){
-		if(incidence==null){
-			incidence = new Incidence();
-		}
-		incidence.setSolve(solve);
-	}
+
 	/**
 	 * 
 	 * @return mailbox
@@ -386,34 +375,32 @@ public class OrderItem implements DatabaseEntity {
 	 * 
 	 * @param mailbox
 	 */
-	public void setMailbox(MailBox mailbox) {
+	public OrderItem setMailbox(MailBox mailbox) {
 		this.mailbox = mailbox;
+
+		return this;
 	}
 
 	/**
 	 * 
-	 * @return MailBoxID
-	 */
-	public int getMailBoxID(){
-		return mailbox.getID();
-	}
-	
-	/**
-	 * 
 	 * @param mailBoxID
 	 */
-	public void setMailBoxID(int mailBoxID){
-		if(mailbox==null) {
+	public OrderItem setMailBoxID(int mailBoxID) {
+		if (mailbox == null)
 			mailbox = new MailBox(mailBoxID);
-		}
-		mailbox.setID(mailBoxID);
+		else
+			mailbox.setID(mailBoxID);
+
+		return this;
 	}
 
 	public Order getParent() {
 		return parent;
 	}
 
-	public void setParent(Order parent) {
+	public OrderItem setParent(Order parent) {
 		this.parent = parent;
+
+		return this;
 	}
 }

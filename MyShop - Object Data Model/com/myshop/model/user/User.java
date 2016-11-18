@@ -4,42 +4,44 @@ import com.myshop.model.contracts.DatabaseEntity;
 
 public class User implements DatabaseEntity {
 
-	private int user_id;
+	private int ID;
 	private String username;
 	private String password;
-	
-	public User(int user_id, String username, String password) {
-		this.user_id = user_id;
+
+	public User(int ID, String username, String password) {
+		this.ID = ID;
 		this.username = username;
 		this.password = password;
 	}
 
 	@Override
 	public int getID() {
-		return user_id;
+		return ID;
 	}
 
 	@Override
-	public void setID(int user_id) {
-		this.user_id = user_id;
-		
+	public User setID(int user_id) {
+		this.ID = user_id;
+		return this;
+
 	}
 
 	public String getUsername() {
 		return username;
 	}
 
-	public void setUsername(String username) {
+	public User setUsername(String username) {
 		this.username = username;
+		return this;
 	}
 
 	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public User setPassword(String password) {
 		this.password = password;
+		return this;
 	}
-	
 
 }

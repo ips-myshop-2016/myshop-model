@@ -3,23 +3,28 @@ package com.myshop.model.customer;
 import com.myshop.model.contracts.Person;
 import com.myshop.model.user.User;
 
-public class IndividualCustomer extends Customer implements Person{
-	
-	private String name;
-	private String surname;
+public class IndividualCustomer extends Customer implements Person {
+
+	private String name, surname;
 	private User user;
-	private Address address;
 	private CreditCards creditCard;
-	
-	public IndividualCustomer(String name, String surname, User user, Address address, CreditCards creditCard) {
+
+	public IndividualCustomer(int ID, String name, String surname, User user,
+			Address address, CreditCards creditCard) {
+		super(ID);
 		this.name = name;
 		this.surname = surname;
 		this.user = user;
-		this.address = address;
+		this.setAddress(address);
 		this.creditCard = creditCard;
 	}
 
-	public IndividualCustomer(){}
+	public IndividualCustomer(int ID, String name, String surname, Address address) {
+		super(ID);
+		this.name = name;
+		this.surname = surname;
+		this.setAddress(address);
+	}
 
 	@Override
 	public String getName() {
@@ -27,8 +32,9 @@ public class IndividualCustomer extends Customer implements Person{
 	}
 
 	@Override
-	public void setName(String name) {
-		this.name= name;
+	public IndividualCustomer setName(String name) {
+		this.name = name;
+		return this;
 	}
 
 	@Override
@@ -37,34 +43,40 @@ public class IndividualCustomer extends Customer implements Person{
 	}
 
 	@Override
-	public void setSurname(String surname) {
+	public IndividualCustomer setSurname(String surname) {
 		this.surname = surname;
+		return this;
 	}
 
 	public User getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public IndividualCustomer setUser(User user) {
 		this.user = user;
+		return this;
 	}
 
+	@Override
 	public Address getAddress() {
-		return address;
+		return super.getAddress();
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	@Override
+	public IndividualCustomer setAddress(Address address) {
+		super.setAddress(address);
+		return this;
 	}
 
 	public CreditCards getCreditCard() {
 		return creditCard;
 	}
 
-	public void setCreditCard(CreditCards creditCard) {
+	public IndividualCustomer setCreditCard(CreditCards creditCard) {
 		this.creditCard = creditCard;
+		return this;
 	}
-	
+
 	public String toString() {
 		return this.name + " " + this.surname;
 	}

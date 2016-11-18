@@ -2,34 +2,34 @@ package com.myshop.model.payments;
 
 import com.myshop.model.contracts.DatabaseEntity;
 
-public class PaymentType implements DatabaseEntity{
-	
-	private int paymentTypeId;
+public class PaymentType implements DatabaseEntity {
+
+	private int ID;
 	private String name;
-	
-	public PaymentType(int paymentTypeId, String name) {
-		this.paymentTypeId = paymentTypeId;
+
+	public PaymentType(int ID, String name) {
+		this.ID = ID;
 		this.name = name;
 	}
 
-	public PaymentType(){}
-
 	@Override
 	public int getID() {
-		return paymentTypeId;
+		return ID;
 	}
 
 	@Override
-	public void setID(int paymentTypeId) {
-		this.paymentTypeId = paymentTypeId;
+	public PaymentType setID(int paymentTypeId) {
+		this.ID = paymentTypeId;
+		return this;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public PaymentType setName(String name) {
 		this.name = name;
+		return this;
 	}
 
 }

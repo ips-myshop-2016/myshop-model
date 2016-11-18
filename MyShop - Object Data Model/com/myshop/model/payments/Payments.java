@@ -2,47 +2,50 @@ package com.myshop.model.payments;
 
 import com.myshop.model.contracts.DatabaseEntity;
 
-public class Payments implements DatabaseEntity{
+public class Payments implements DatabaseEntity {
 
-	
-	private int paymentId;
+	private int ID;
 	private PaymentType type;
 	private boolean received = false;
-	
-	public Payments(int paymentId, PaymentType type, boolean received) {
-		this.paymentId = paymentId;
+
+	public Payments(int ID, PaymentType type, boolean received) {
+		this.ID = ID;
 		this.type = type;
 		this.received = received;
 	}
-
-	public Payments(){}
+	
+	public Payments(int ID, PaymentType type) {
+		this.ID = ID;
+		this.type = type;
+	}
 
 	public PaymentType getType() {
 		return type;
 	}
 
-	public void setType(PaymentType type) {
+	public Payments setType(PaymentType type) {
 		this.type = type;
+		return this;
 	}
 
 	public boolean isReceived() {
 		return received;
 	}
 
-	public void setReceived(boolean received) {
+	public Payments setReceived(boolean received) {
 		this.received = received;
+		return this;
 	}
 
 	@Override
 	public int getID() {
-		return paymentId;
+		return ID;
 	}
 
 	@Override
-	public void setID(int paymentId) {
-		this.paymentId = paymentId;
+	public Payments setID(int paymentId) {
+		this.ID = paymentId;
+		return this;
 	}
-	
-	
-	
+
 }

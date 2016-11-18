@@ -1,13 +1,9 @@
 package com.myshop.model.customer;
 
+public class Address {
 
-public class Address{
+	private String street, city, state, cip_code;
 
-	private String street;
-	private String city;
-	private String state;
-	private String cip_code;
-	
 	public Address(String street, String city, String state, String cip_code) {
 		this.street = street;
 		this.city = city;
@@ -15,31 +11,40 @@ public class Address{
 		this.cip_code = cip_code;
 	}
 
-	public Address(){}
-	
 	public String getStreet() {
 		return street;
 	}
-	public void setStreet(String street) {
+
+	public Address setStreet(String street) {
 		this.street = street;
+		return this;
 	}
+
 	public String getCity() {
 		return city;
 	}
-	public void setCity(String city) {
+
+	public Address setCity(String city) {
 		this.city = city;
+		return this;
 	}
+
 	public String getState() {
 		return state;
 	}
-	public void setState(String state) {
+
+	public Address setState(String state) {
 		this.state = state;
+		return this;
 	}
+
 	public String getCip_code() {
 		return cip_code;
 	}
-	public void setCip_code(String cip_code) {
+
+	public Address setCip_code(String cip_code) {
 		this.cip_code = cip_code;
+		return this;
 	}
-	
+
 }

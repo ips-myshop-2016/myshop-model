@@ -9,22 +9,19 @@ import com.myshop.model.customer.Customer;
 
 public class Order implements DatabaseEntity {
 
-	private int orderID;
+	private int ID;
 	private List<OrderItem> products;
 	private Status status;
 	private Date dateReceived;
 	private Customer customer;
 
-	public Order(int orderID, List<OrderItem> products, Status status, Date dateReceived, Customer customer) {
-		this.orderID = orderID;
+	public Order(int ID, List<OrderItem> products, Status status,
+			Date dateReceived, Customer customer) {
+		this.ID = ID;
 		this.products = products;
 		this.status = status;
 		this.dateReceived = dateReceived;
 		this.customer = customer;
-		products = new ArrayList<OrderItem>();
-	}
-
-	public Order() {
 		products = new ArrayList<OrderItem>();
 	}
 
@@ -34,18 +31,19 @@ public class Order implements DatabaseEntity {
 	 */
 	@Override
 	public int getID() {
-		return orderID;
+		return ID;
 	}
 
 	/**
 	 * 
-	 * @param orderID
+	 * @param ID
 	 */
 	@Override
-	public void setID(int orderID) {
-		this.orderID = orderID;
+	public Order setID(int ID) {
+		this.ID = ID;
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return products
@@ -58,8 +56,9 @@ public class Order implements DatabaseEntity {
 	 * 
 	 * @param products
 	 */
-	public void setProducts(List<OrderItem> products) {
+	public Order setProducts(List<OrderItem> products) {
 		this.products = products;
+		return this;
 	}
 
 	/**
@@ -74,10 +73,11 @@ public class Order implements DatabaseEntity {
 	 * 
 	 * @param status
 	 */
-	public void setStatus(String estado) {
+	public Order setStatus(String estado) {
 		status = Status.valueOf(estado);
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return orders date
@@ -90,11 +90,12 @@ public class Order implements DatabaseEntity {
 	 * 
 	 * @param dateReceived
 	 */
-	public void setDateReceived(Date dateReceived) {
+	public Order setDateReceived(Date dateReceived) {
 		this.dateReceived = dateReceived;
-		
+		return this;
+
 	}
-	
+
 	/**
 	 * 
 	 * @return the customer
@@ -107,27 +108,30 @@ public class Order implements DatabaseEntity {
 	 * 
 	 * @param customer
 	 */
-	public void setCustomer(Customer customer) {
+	public Order setCustomer(Customer customer) {
 		this.customer = customer;
+		return this;
 	}
-	
+
 	/**
 	 * 
 	 * @return getCustomerID
 	 */
-	public int getCustomerID(){
+	public int getCustomerID() {
 		return customer.getID();
 	}
-	
+
 	/**
 	 * 
 	 * @param customerID
 	 */
-	public void setCustomerID(int customerID){
-		if(customer==null) {
-			customer = new Customer();
-		}
-		customer.setID(customerID);
-		
+	public Order setCustomerID(int customerID) {
+		if (customer == null)
+			customer = new Customer(customerID);
+		else
+			customer.setID(customerID);
+
+		return this;
+
 	}
 }

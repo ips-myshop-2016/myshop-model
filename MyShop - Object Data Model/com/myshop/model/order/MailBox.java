@@ -3,31 +3,30 @@ package com.myshop.model.order;
 import com.myshop.model.contracts.DatabaseEntity;
 
 public class MailBox implements DatabaseEntity {
-	
-	private int mailBoxID;
 
-	public MailBox(int mailboxid){
-		this.mailBoxID=mailboxid;
+	private int ID;
+
+	public MailBox(int ID) {
+		this.ID = ID;
 	}
-	
+
 	/**
 	 * 
 	 * @return MailBoxID
 	 */
 	@Override
 	public int getID() {
-		return mailBoxID;
+		return ID;
 	}
-	
+
 	/**
 	 * 
 	 * @param mailBoxID
 	 */
 	@Override
-	public void setID(int mailBoxID) {
-		this.mailBoxID = mailBoxID;
+	public MailBox setID(int mailBoxID) {
+		this.ID = mailBoxID;
+		return this;
 	}
-	
-	
 
 }
