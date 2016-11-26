@@ -1,4 +1,4 @@
-package com.myshop.shipment;
+package com.myshop.model.shipment;
 
 import java.util.ArrayList;
 import java.util.List;

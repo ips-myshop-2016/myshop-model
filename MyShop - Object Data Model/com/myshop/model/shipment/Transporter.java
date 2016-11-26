@@ -1,4 +1,4 @@
-package com.myshop.shipment;
+package com.myshop.model.shipment;
 
 import com.myshop.model.contracts.DatabaseEntity;
 
