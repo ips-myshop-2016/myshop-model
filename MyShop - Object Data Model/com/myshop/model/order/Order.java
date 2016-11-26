@@ -24,6 +24,10 @@ public class Order implements DatabaseEntity {
 		this.customer = customer;
 		products = new ArrayList<OrderItem>();
 	}
+	
+	public Order() {
+		products = new ArrayList<OrderItem>();
+	}
 
 	/**
 	 * 
