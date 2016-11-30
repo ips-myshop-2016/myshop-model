@@ -6,11 +6,18 @@ public class WorkingPlanItem {
 
 	private OrderItem orderItem;
 	private boolean collected = false;
+	private int itemsCollected = 0;
 
 	@Deprecated
 	public WorkingPlanItem(OrderItem orderItem, boolean collected) {
 		this.orderItem = orderItem;
 		this.collected = collected;
+	}
+	
+	public WorkingPlanItem(OrderItem orderItem, boolean collected, int itemsCollected) {
+		this.orderItem = orderItem;
+		this.collected = collected;
+		this.setItemsCollected(itemsCollected);
 	}
 	
 	public WorkingPlanItem() { }
@@ -43,6 +50,14 @@ public class WorkingPlanItem {
 	public WorkingPlanItem setCollected(boolean collected) {
 		this.collected = collected;
 		return this;
+	}
+
+	public int getItemsCollected() {
+		return itemsCollected;
+	}
+
+	public void setItemsCollected(int itemsCollected) {
+		this.itemsCollected = itemsCollected;
 	}
 
 }

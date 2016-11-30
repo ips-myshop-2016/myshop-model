@@ -13,14 +13,16 @@ public class OrderItem implements DatabaseEntity {
 	private Incidence incidence;
 	private MailBox mailbox;
 	private Order parent;
+	public int itemsPackaged;
 
 	public OrderItem(int ID, int quantity, Product product, Incidence incidence,
-			MailBox mailbox) {
+			MailBox mailbox, int itemsPackaged) {
 		this.ID = ID;
 		this.quantity = quantity;
 		this.product = product;
 		this.incidence = incidence;
 		this.mailbox = mailbox;
+		this.itemsPackaged = itemsPackaged;
 	}
 	
 	public OrderItem(int ID, int quantity, Product product) {
